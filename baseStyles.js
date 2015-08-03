@@ -1,4 +1,5 @@
 //	Freestyle Sotware, Inc.
+//	INTERFACE - A React Native UI Library
 
 //	Color, type, and image definitions. 
 //	Keep it up to date. Keep it clean. Keep it simple.
@@ -42,7 +43,7 @@ let day = {
 //	White as base, with minor shade and tint adjustment
 	base: husl.toHex(0, 0, 98),
 	baseTint: husl.toHex(0, 0, 100),	
-	baseShade: husl.toHex(0, 0, 92),
+	baseShade: husl.toHex(0, 0, 95),
 	
 //	Black as complement, with minor shade and tint adjustment
 	baseComplement: husl.toHex(0, 0, 20),
@@ -50,14 +51,17 @@ let day = {
 	baseComplementShade: husl.toHex(0, 0, 10),
 	
 //	Gray, with a shade and tint that work with a bright interface
-	baseGray: husl.toHex(0, 0, 80),
-	baseLightGray: husl.toHex(0, 0, 90),
-	baseDarkGray: husl.toHex(0, 0, 70),
+	baseGray: husl.toHex(0, 0, 70),
+	baseLightGray: husl.toHex(0, 0, 80),
+	baseDarkGray: husl.toHex(0, 0, 55),
 	
 //	Define any number of primary colors that work well with light interfaces	
 	blue: husl.toHex(255, 98, 52),
 	red: husl.toHex(10, 97, 47),
 	green: husl.toHex(130, 95, 58),
+
+	facebook: husl.toHex(260, 95, 50),
+	twitter: husl.toHex(235, 95, 70),
 
 //	Use a bright, vibrant, blurred image for daytime backgrounds.
 	backdrop: "bgd-person02",
@@ -88,6 +92,9 @@ let night = {
 	blue: husl.toHex(255, 92, 45),
 	red: husl.toHex(10, 90, 38),
 	green: husl.toHex(130, 85, 41),
+
+	facebook: husl.toHex(225, 92, 45),
+	twitter: husl.toHex(200, 92, 45),
 	
 //	Use a dark, dull, blurred image for daytime backgrounds.
 	backdrop: "bgd-night",
@@ -129,6 +136,10 @@ function createColorPalette(base, color, punch) {
 
 		pureWhite: husl.toHex(0, 0, 100),
 		pureBlack: husl.toHex(0, 0, 0),
+
+		facebook: base.facebook,
+		twitter: base.twitter,
+
 	};
 };
 
@@ -154,36 +165,43 @@ function createColorPalette(base, color, punch) {
 //	... to properly override the color in the component.
 
 
-let baseFontFace = "Avenir"
+let baseFontFace = "Open Sans"
 
 let baseFont = {
-	xlFont: {
-		color: baseColor.black,
+	xtraLarge: {
 		fontFamily: baseFontFace,
 		fontWeight: "400",
-		fontSize: 26,
+		fontSize: 24,
+		lineHeight: 32,
+		color: baseColor.black,
+	},
+	large: {
+		fontFamily: baseFontFace,
+		fontWeight: "400",
+		fontSize: 23,
 		lineHeight: 28,
-	},
-	lgFont: {
 		color: baseColor.black,
+	},	
+	medium: {	
 		fontFamily: baseFontFace,
 		fontWeight: "400",
-		fontSize: 22,
-		lineHeight: 26,
-	},	
-	mdFont: {	
+		fontSize: 17,
+		lineHeight: 24,
 		color: baseColor.black,
-		fontFamily: baseFontFace,
-		fontWeight: "200",
-		fontSize: 18,
-		lineHeight: 20,
 	},
-	smFont: {
-		color: baseColor.black,
+	small: {
 		fontFamily: baseFontFace,
-		fontWeight: "200",
-		fontSize: 14,
-		lineHeight: 18,
+		fontWeight: "400",
+		fontSize: 11,
+		lineHeight: 14,
+		color: baseColor.black,
+	},
+	label: {
+		fontFamily: baseFontFace,
+		fontWeight: "600",
+		fontSize: 11,
+		letterSpacing: 1,
+		color: baseColor.black,
 	},
 };
 
@@ -207,42 +225,42 @@ let baseFont = {
 //	to the name of the variable used below. If there's a name mismatch, React won't load the image.
 
 let baseImage = {
-	"bookmark" : require("image!bookmark"),
-	"calendar": require("image!calendar"),
-	"checkmark": require("image!checkmark"),
-	"cross": require("image!cross"),
-	"dashboard": require("image!dashboard"),
-	"directions": require("image!directions"),
-	"document": require("image!document"),
-	"ellipses": require("image!ellipses"),
-	"envelope": require("image!envelope"),
-	"facebook": require("image!facebook"),
-	"geo": require("image!geo"),
-	"googleplus": require("image!googleplus"),
-	"leftarrow": require("image!leftarrow"),
-	"linkedin": require("image!linkedin"),
-	"magnifyingglass": require("image!magnifyingglass"),
-	"note": require("image!note"),
-	"pdf": require("image!pdf"),
-	"pen": require("image!pen"),
-	"pencil": require("image!pencil"),
-	"person": require("image!person"),
-	"phone": require("image!phone"),
-	"plus": require("image!plus"),
-	"ppt": require("image!ppt"),
-	"rightarrow": require("image!rightarrow"),
-	"seal": require("image!seal"),
-	"share": require("image!share"),
-	"sliders": require("image!sliders"),
-	"stopwatch": require("image!stopwatch"),
-	"trashcan": require("image!trashcan"),
-	"twitter": require("image!twitter"),
-	"xls": require("image!xls"),
+// 	"bookmark" : require("image!bookmark"),
+// 	"calendar": require("image!calendar"),
+// 	"checkmark": require("image!checkmark"),
+// 	"cross": require("image!cross"),
+// 	"dashboard": require("image!dashboard"),
+// 	"directions": require("image!directions"),
+// 	"document": require("image!document"),
+// 	"ellipses": require("image!ellipses"),
+// 	"envelope": require("image!envelope"),
+// 	"facebook": require("image!facebook"),
+// 	"geo": require("image!geo"),
+// 	"googleplus": require("image!googleplus"),
+// 	"leftarrow": require("image!leftarrow"),
+// 	"linkedin": require("image!linkedin"),
+// 	"magnifyingglass": require("image!magnifyingglass"),
+// 	"note": require("image!note"),
+// 	"pdf": require("image!pdf"),
+// 	"pen": require("image!pen"),
+// 	"pencil": require("image!pencil"),
+// 	"person": require("image!person"),
+// 	"phone": require("image!phone"),
+// 	"plus": require("image!plus"),
+// 	"ppt": require("image!ppt"),
+// 	"rightarrow": require("image!rightarrow"),
+// 	"seal": require("image!seal"),
+// 	"share": require("image!share"),
+// 	"sliders": require("image!sliders"),
+// 	"stopwatch": require("image!stopwatch"),
+// 	"trashcan": require("image!trashcan"),
+// 	"twitter": require("image!twitter"),
+// 	"xls": require("image!xls"),
 
-	"logo": require("image!logo"),
+// 	"logo": require("image!logo"),
 
-//	Temporary variable for now until server is up and running
-	"backdrop": "http://localhost:8081/fpo/"+baseColor.backdrop+".jpg",
+// //	Temporary variable for now until server is up and running
+// 	"backdrop": "http://localhost:8081/fpo/"+baseColor.backdrop+".jpg",
 };
 
 
