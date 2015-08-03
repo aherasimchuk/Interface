@@ -84,9 +84,9 @@ let night = {
 	baseComplementShade: husl.toHex(0, 0, 98),
 	
 //	Gray, with a shade and tint that work with a dark interface
-	baseGray: husl.toHex(0, 0, 20),
-	baseLightGray: husl.toHex(0, 0, 25),
-	baseDarkGray: husl.toHex(0, 0, 10),
+	baseGray: husl.toHex(0, 0, 45),
+	baseLightGray: husl.toHex(0, 0, 40),
+	baseDarkGray: husl.toHex(0, 0, 55),
 	
 //	Define any number of primary colors that work well with darker interfaces
 	blue: husl.toHex(255, 92, 45),
@@ -126,7 +126,7 @@ function createColorPalette(base, color, punch) {
 
 		color: base[color],
 		tint: tinyColor(base[color].toString()).lighten(15).toHexString(),
-		bright: tinyColor(base[color].toString()).lighten(25).toHexString(),
+		bright: tinyColor(base[color].toString()).lighten(35).toHexString(),
 		shade: tinyColor(base[color].toString()).darken(10).toHexString(),
 		deep: tinyColor(base[color].toString()).darken(20).toHexString(),
 

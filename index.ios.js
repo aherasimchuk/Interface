@@ -89,14 +89,14 @@ var Interface = React.createClass({
 
 				    <View style={styles.item}>
 				        <Text style={styles.itemLabel}>AUTO POSTING</Text>
-				        <SwitchIOS style={styles.itemSwitcher} thumbTintColor={baseColor.brightWhite} tintColor={baseColor.black} onTintColor={baseColor.black}
+				        <SwitchIOS style={styles.itemSwitcher} thumbTintColor={baseColor.color} tintColor={baseColor.bright} onTintColor={baseColor.bright}
 			                onValueChange={(value) => this.setState({autoPost: value})} value={this.state.autoPost} />
 				    </View>
 
 					<Text style={styles.formHeader}>Sync with</Text>
 				    <View style={styles.buttons}>
-					    <TouchableHighlight style={[styles.formButton, {borderColor: baseColor.facebook}]} underlayColor={baseColor.bright}>
-					    	<Text style={[styles.formButtonLabel, {color: baseColor.facebook}]}>FACEBOOK</Text>
+					    <TouchableHighlight style={styles.formButton} underlayColor={baseColor.bright}>
+					    	<Text style={styles.formButtonLabel}>FACEBOOK</Text>
 					    </TouchableHighlight>
 					    <TouchableHighlight style={[styles.formButton, {borderColor: baseColor.twitter}]} underlayColor={baseColor.bright}>
 					    	<Text style={[styles.formButtonLabel, {color: baseColor.twitter}]}>TWITTER</Text>
@@ -132,11 +132,11 @@ var styles = StyleSheet.create({
 	},
 	navTitle: {
 		...baseFont.medium,
-		color: baseColor.white,
+		color: baseColor.pureWhite,
 	},
 	navAction: {
 		...baseFont.small,
-		color: baseColor.white,
+		color: baseColor.pureWhite,
 	},
 
 	profile: {
@@ -148,7 +148,7 @@ var styles = StyleSheet.create({
 		marginLeft: 20,
 		borderWidth: 2,
         borderRadius: 35,
-        borderColor: baseColor.white,
+        borderColor: baseColor.pureWhite,
     },
     handle: {
 	   	flex: 1,
@@ -173,20 +173,20 @@ var styles = StyleSheet.create({
     },
     handleLabel: {
     	...baseFont.label,
-    	color: baseColor.brightWhite,
+    	color: baseColor.pureWhite,
     	backgroundColor: "transparent",
     },
     handleName: {
     	...baseFont.medium,
 		textAlign: "right",
-		color: baseColor.brightWhite,
+		color: baseColor.pureWhite,
         backgroundColor: "transparent",
     },
     handleDescription: {
 		...baseFont.small,
     	flex: 1,
 		marginTop: 5,
-    	color: baseColor.gray,
+    	color: baseColor.pureWhite,
     },
 
 
@@ -242,12 +242,14 @@ var styles = StyleSheet.create({
         padding: 5,
         borderWidth: 1,
         borderRadius: 4,
+        borderColor: baseColor.color,
         backgroundColor: baseColor.brightWhite,
     },
     formButtonLabel: {
     	...baseFont.small,
 		letterSpacing: 1,
         textAlign: "center",
+        color: baseColor.color,
     },
 
 });
