@@ -7,13 +7,11 @@
 
 var React = require('react-native');
 var {
-	AppRegistry,
 	StyleSheet,
 	PixelRatio,
 	Text,
 	Image,
 	View,
-	NavigatorIOS,
 	ScrollView,
 	TouchableHighlight,
 	TextInput,
@@ -25,18 +23,14 @@ var {
 	baseFont,
 	baseImage,
 	sharedStyle,
-} = require('./baseStyles');
+} = require('./BaseStyles');
 
 var tinyColor = require("tinycolor2");
 
-// Templates ------------------------------------------------------------------
-
-// var TEMPLATE = require("./TEMPLATENAME");
 
 // ----------------------------------------------------------------------------
 
-
-var Interface = React.createClass({
+var EditProfile = React.createClass({
 
     getInitialState() {
         return {
@@ -44,67 +38,67 @@ var Interface = React.createClass({
         };
     },
 
-	render: function() {
+	render () {
 		return (
-			<View style={styles.container}>
-				<Image style={styles.backdrop} source={{ uri: "http://localhost:8081/fpo/cover-profile.png" }}>
-					{/* NAVBAR */}
-					<View style={styles.nav}>
-						<Text style={styles.navAction}>BACK</Text>
-						<Text style={styles.navTitle}>Edit</Text>
-						<Text style={styles.navAction}>SAVE</Text>
-					</View>
-					{/* PROFILE  */}
-					<View style={styles.profile}>
-				        <Image style={styles.avatar} source={{ uri: "http://localhost:8081/fpo/avatar-profile.png" }} />
-				        <View style={styles.handle}>
-				            <View style={styles.handleItem}>
-				            	<Text style={styles.handleLabel}>NAME</Text>
-				                <Text style={styles.handleName}>Samantha Aryton</Text>
-				            </View>
-				            <View style={styles.handleStacked}>
-				                <Text style={styles.handleLabel} numberOfLines={1}>TITLE</Text>
-				                <Text style={styles.handleDescription} numberOfLines={4}>
-				                	This I have produced as a scantling of Jack's great eloquence and the force
-				                	of his reasoning upon such abstruse matters.
-				                </Text>
-				            </View>
-				        </View>
-				    </View>
-				</Image>
-
-				{/* FORM */}
-				<View style={styles.form}>
-					<View style={styles.item}>
-						<Text style={styles.itemLabel}>EMAIL</Text>
-					    <TextInput style={styles.itemField} clearButtonMode={"while-editing"} keyboardType={"email-address"} autoCorrect={false} 
-					    	placeholder={""} placeholderTextColor={baseColor.black} />
-				    </View>
-
-				    <View style={styles.item}>
-						<Text style={styles.itemLabel}>PASSWORD</Text>
-					    <TextInput style={styles.itemField} clearButtonMode={"while-editing"} keyboardType={"ascii-capable"} autoCorrect={false}
-					    	password={true} value={"testing"} />
-				    </View>
-
-				    <View style={styles.item}>
-				        <Text style={styles.itemLabel}>AUTO POSTING</Text>
-				        <SwitchIOS style={styles.itemSwitcher} thumbTintColor={baseColor.color} tintColor={baseColor.bright} onTintColor={baseColor.bright}
-			                onValueChange={(value) => this.setState({autoPost: value})} value={this.state.autoPost} />
-				    </View>
-
-					<Text style={styles.formHeader}>Sync with</Text>
-				    <View style={styles.buttons}>
-					    <TouchableHighlight style={styles.formButton} underlayColor={baseColor.bright}>
-					    	<Text style={styles.formButtonLabel}>FACEBOOK</Text>
-					    </TouchableHighlight>
-					    <TouchableHighlight style={[styles.formButton, {borderColor: baseColor.twitter}]} underlayColor={baseColor.bright}>
-					    	<Text style={[styles.formButtonLabel, {color: baseColor.twitter}]}>TWITTER</Text>
-					    </TouchableHighlight>
-				    </View>
+		<View style={styles.container}>
+			<Image style={styles.backdrop} source={{ uri: "http://localhost:8081/fpo/cover-profile.png" }}>
+				{/* NAVBAR */}
+				<View style={styles.nav}>
+					<Text style={styles.navAction}>BACK</Text>
+					<Text style={styles.navTitle}>Edit</Text>
+					<Text style={styles.navAction}>SAVE</Text>
 				</View>
+				{/* PROFILE  */}
+				<View style={styles.profile}>
+			        <Image style={styles.avatar} source={{ uri: "http://localhost:8081/fpo/avatar-profile.png" }} />
+			        <View style={styles.handle}>
+			            <View style={styles.handleItem}>
+			            	<Text style={styles.handleLabel}>NAME</Text>
+			                <Text style={styles.handleName}>Samantha Aryton</Text>
+			            </View>
+			            <View style={styles.handleStacked}>
+			                <Text style={styles.handleLabel} numberOfLines={1}>TITLE</Text>
+			                <Text style={styles.handleDescription} numberOfLines={4}>
+			                	This I have produced as a scantling of Jack's great eloquence and the force
+			                	of his reasoning upon such abstruse matters.
+			                </Text>
+			            </View>
+			        </View>
+			    </View>
+			</Image>
+
+			{/* FORM */}
+			<View style={styles.form}>
+				<View style={styles.item}>
+					<Text style={styles.itemLabel}>EMAIL</Text>
+				    <TextInput style={styles.itemField} clearButtonMode={"while-editing"} keyboardType={"email-address"} autoCorrect={false} 
+				    	placeholder={""} placeholderTextColor={baseColor.black} />
+			    </View>
+
+			    <View style={styles.item}>
+					<Text style={styles.itemLabel}>PASSWORD</Text>
+				    <TextInput style={styles.itemField} clearButtonMode={"while-editing"} keyboardType={"ascii-capable"} autoCorrect={false}
+				    	password={true} value={"testing"} />
+			    </View>
+
+			    <View style={styles.item}>
+			        <Text style={styles.itemLabel}>AUTO POSTING</Text>
+			        <SwitchIOS style={styles.itemSwitcher} thumbTintColor={baseColor.color} tintColor={baseColor.bright} onTintColor={baseColor.bright}
+		                onValueChange={(value) => this.setState({autoPost: value})} value={this.state.autoPost} />
+			    </View>
+
+				<Text style={styles.formHeader}>Sync with</Text>
+			    <View style={styles.buttons}>
+				    <TouchableHighlight style={styles.formButton} underlayColor={baseColor.bright}>
+				    	<Text style={styles.formButtonLabel}>FACEBOOK</Text>
+				    </TouchableHighlight>
+				    <TouchableHighlight style={[styles.formButton, {borderColor: baseColor.twitter}]} underlayColor={baseColor.bright}>
+				    	<Text style={[styles.formButtonLabel, {color: baseColor.twitter}]}>TWITTER</Text>
+				    </TouchableHighlight>
+			    </View>
 			</View>
-		);
+		</View>
+		)
 	}
 });
 
@@ -257,4 +251,6 @@ var styles = StyleSheet.create({
 
 });
 
-AppRegistry.registerComponent('Interface', () => Interface);
+//	------------------------------------------------------------
+
+module.exports = EditProfile;
