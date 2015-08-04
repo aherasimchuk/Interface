@@ -20,8 +20,6 @@ var {
 	sharedStyle,
 } = require('./BaseStyles');
 
-var tinyColor = require("tinycolor2");
-
 //	Templates ------------------------------------------------------------------
 //
 //	List of hard coded templates. Swap out the name of the single rendered

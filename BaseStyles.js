@@ -165,42 +165,41 @@ function createColorPalette(base, color, punch) {
 //	... to properly override the color in the component.
 
 
-let baseFontFace = "Open Sans"
+let baseFontFace = "RobotoCondensed-Bold"
 
 let baseFont = {
 	xtraLarge: {
 		fontFamily: baseFontFace,
-		fontWeight: "400",
+		fontWeight: "100",
 		fontSize: 24,
 		lineHeight: 32,
 		color: baseColor.black,
 	},
 	large: {
 		fontFamily: baseFontFace,
-		fontWeight: "400",
+		fontWeight: "100",
 		fontSize: 23,
 		lineHeight: 28,
 		color: baseColor.black,
 	},	
 	medium: {	
 		fontFamily: baseFontFace,
-		fontWeight: "400",
+		fontWeight: "100",
 		fontSize: 17,
 		lineHeight: 24,
 		color: baseColor.black,
 	},
 	small: {
 		fontFamily: baseFontFace,
-		fontWeight: "400",
+		fontWeight: "100",
 		fontSize: 11,
 		lineHeight: 14,
 		color: baseColor.black,
 	},
 	label: {
 		fontFamily: baseFontFace,
-		fontWeight: "600",
+		fontWeight: "400",
 		fontSize: 11,
-		letterSpacing: 1,
 		color: baseColor.black,
 	},
 };
