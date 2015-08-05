@@ -43,6 +43,7 @@ var EditProfile = React.createClass({
 			<View style={styles.container}>
 				<Image style={styles.backdrop} source={{ uri: baseImage.backdrop }}>
 					{/* NAVBAR */}
+					<View style={styles.overlay} />
 					<View style={styles.nav}>
 						<Image style={sharedStyle.navIcon} source={baseImage.leftarrow} />
 						<Text style={styles.navTitle}>Edit</Text>
@@ -121,6 +122,15 @@ var styles = StyleSheet.create({
 		height: 230,
 		backgroundColor: "transparent",
 	},
+	overlay: {
+		position: "absolute",
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 0,
+		backgroundColor: baseColor.white,
+		opacity: 0.50, 
+	},
 
 	nav: {
 		flexDirection: "row",
@@ -132,16 +142,16 @@ var styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "space-between",
  	    borderTopWidth: 1 / PixelRatio.get(),
-        borderTopColor: tinyColor(baseColor.white.toString("hsl")).setAlpha(0.25).toRgbString(),
+        borderTopColor: tinyColor(baseColor.black.toString("hsl")).setAlpha(0.25).toRgbString(),
 	},
 	navTitle: {
 		...baseFont.medium,
 		fontWeight: "200",
-		color: baseColor.pureWhite,
+		color: baseColor.black,
 	},
 	navAction: {
 		...baseFont.small,
-		color: baseColor.pureWhite,
+		color: baseColor.black,
 	},
 
 	profile: {
@@ -153,7 +163,7 @@ var styles = StyleSheet.create({
 		marginLeft: 20,
 		borderWidth: 2,
         borderRadius: 35,
-        borderColor: tinyColor(baseColor.pureWhite.toString("hsl")).setAlpha(0.50).toRgbString(),
+        borderColor: tinyColor(baseColor.black.toString("hsl")).setAlpha(0.75).toRgbString(),
     },
     handle: {
 	   	flex: 1,
@@ -178,20 +188,20 @@ var styles = StyleSheet.create({
     },
     handleLabel: {
     	...baseFont.label,
-    	color: baseColor.pureWhite,
+    	color: baseColor.black,
     	backgroundColor: "transparent",
     },
     handleName: {
     	...baseFont.medium,
 		textAlign: "right",
-		color: baseColor.pureWhite,
+		color: baseColor.black,
         backgroundColor: "transparent",
     },
     handleDescription: {
 		...baseFont.small,
     	flex: 1,
 		marginTop: 5,
-    	color: baseColor.pureWhite,
+    	color: baseColor.black,
     	opacity: 0.5,
     },
 

@@ -64,7 +64,7 @@ let day = {
 	twitter: husl.toHex(235, 95, 70),
 
 //	Use a bright, vibrant, blurred image for daytime backgrounds.
-	backdrop: "cover-profile-light",
+	backdrop: "cover-profile",
 };
 
 
@@ -97,7 +97,7 @@ let night = {
 	twitter: husl.toHex(235, 95, 70),
 	
 //	Use a dark, dull, blurred image for nighttime backgrounds.
-	backdrop: "cover-profile-dark",
+	backdrop: "cover-profile",
 };
 
 
@@ -108,7 +108,7 @@ let night = {
 //	using white and black terminology in that context. If you ever need a full white or black, use the
 //	"pureWhite" and "pureBlack" keys.
 
-let baseColor = createColorPalette(day, "blue", "red");
+let baseColor = createColorPalette(night, "blue", "red");
 
 function createColorPalette(base, color, punch) {
 	return {
@@ -291,7 +291,7 @@ let sharedStyle = {
 	navIcon: {
 		width: 30,
 		height: 30,
-		tintColor: baseColor.pureWhite,
+		tintColor: baseColor.black,
 	},
 	largeAvatar: {
 		width: 60,
