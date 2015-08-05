@@ -213,7 +213,7 @@ let baseFont = {
 
 //	e.g., baseImage.bookmark, baseImage.pencil
 
-//	Each of these images exists in the "freestyle-icons.psd" file, and are produced 
+//	Each of these images exists in the "mockups/Icons.psd" file, and are produced 
 //	at 1x, 2x, and 3x automatically using Photoshop Generator. Once created by Generator,
 //	each icon has to be manually added to the XCode project as an imageasset.
 
