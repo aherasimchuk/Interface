@@ -136,7 +136,6 @@ var styles = StyleSheet.create({
 		flexDirection: "row",
 		marginTop: 22,
 		marginBottom: 22,
-		paddingTop: 4,
 		paddingLeft: 10,
 		paddingRight: 10,
 		alignItems: "center",
@@ -238,10 +237,7 @@ var styles = StyleSheet.create({
     },
     formHeader: {
 	   	...baseFont.label,
-    	paddingLeft: 10,
-    	paddingRight: 10,
-    	paddingTop: 10,
-    	paddingBottom: 10,
+    	padding: 10,
 		color: baseColor.darkGray,
        	backgroundColor: baseColor.offWhite,
     },
@@ -249,9 +245,7 @@ var styles = StyleSheet.create({
     	flexDirection: "row",
     	alignItems: "center",
     	justifyContent: "space-between",
-    	paddingTop: 10,
-    	paddingBottom: 10,
-    	paddingLeft: 10,
+    	padding: 10,
     	paddingRight: 20,
         borderTopWidth: 1 / PixelRatio.get(),
         borderTopColor: tinyColor(baseColor.darkGray.toString("hsl")).setAlpha(0.50).toRgbString(),
@@ -266,19 +260,15 @@ var styles = StyleSheet.create({
         backgroundColor: baseColor.brightWhite,
     },
     formButton: {
-
     	flexDirection: "row",
     	alignItems: "center",
-    	paddingTop: 5,
-    	paddingBottom: 5,
-        paddingLeft: 10,
-        paddingRight: 10,
+    	padding: 5,
 		borderRadius: 4,   // Seems like a hack or bug to have to add border radius to both wrapper and button for touch effect to look correct   
     },
     formButtonLabel: {
     	...baseFont.small,
-		letterSpacing: 1,
         color: baseColor.color,
+		letterSpacing: 1,
     },
 
 });
