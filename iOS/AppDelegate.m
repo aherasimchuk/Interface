@@ -32,6 +32,7 @@
    */
 
   jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle"];
+  // jsCodeLocation = [NSURL URLWithString:@"http://ENTER-ADDRESS-HERE:8081/index.ios.bundle"];      // Change to your network IP address
 
   /**
    * OPTION 2
