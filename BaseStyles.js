@@ -64,7 +64,7 @@ let day = {
 	twitter: husl.toHex(235, 95, 70),
 
 //	Use a bright, vibrant, blurred image for daytime backgrounds.
-	backdrop: "bgd-person02",
+	backdrop: "cover-profile-light",
 };
 
 
@@ -93,15 +93,15 @@ let night = {
 	red: husl.toHex(10, 90, 38),
 	green: husl.toHex(130, 85, 41),
 
-	facebook: husl.toHex(225, 92, 45),
-	twitter: husl.toHex(200, 92, 45),
+	facebook: husl.toHex(260, 95, 50),
+	twitter: husl.toHex(235, 95, 70),
 	
-//	Use a dark, dull, blurred image for daytime backgrounds.
-	backdrop: "bgd-night",
+//	Use a dark, dull, blurred image for nighttime backgrounds.
+	backdrop: "cover-profile-dark",
 };
 
 
-//	Create the color palette using day or night values above, and pass along a primary and punch color 
+//	Create the color palette using theme values from above, and pass along a primary and punch color 
 //	pulled from the theme.
 
 //	IMPORTANT: Everything is written from the point of view of creating a daylight interface as the default, 
@@ -223,43 +223,38 @@ let baseFont = {
 //	IMPORTANT: Be sure to match the name of the layer in Photoshop to the name of the image asset in XCode
 //	to the name of the variable used below. If there's a name mismatch, React won't load the image.
 
+
+//	Use for iOS ismulator
+let serverAddress = "localhost";
+
+//	Add your network address here for iPhone development
+// let serverAddress = "ENTER YOUR NETWORK IP ADDRRESS HERE";
+
 let baseImage = {
-// 	"bookmark" : require("image!bookmark"),
-// 	"calendar": require("image!calendar"),
-// 	"checkmark": require("image!checkmark"),
-// 	"cross": require("image!cross"),
-// 	"dashboard": require("image!dashboard"),
-// 	"directions": require("image!directions"),
-// 	"document": require("image!document"),
-// 	"ellipses": require("image!ellipses"),
-// 	"envelope": require("image!envelope"),
-// 	"facebook": require("image!facebook"),
-// 	"geo": require("image!geo"),
-// 	"googleplus": require("image!googleplus"),
-// 	"leftarrow": require("image!leftarrow"),
-// 	"linkedin": require("image!linkedin"),
-// 	"magnifyingglass": require("image!magnifyingglass"),
-// 	"note": require("image!note"),
-// 	"pdf": require("image!pdf"),
-// 	"pen": require("image!pen"),
-// 	"pencil": require("image!pencil"),
-// 	"person": require("image!person"),
-// 	"phone": require("image!phone"),
-// 	"plus": require("image!plus"),
-// 	"ppt": require("image!ppt"),
-// 	"rightarrow": require("image!rightarrow"),
-// 	"seal": require("image!seal"),
-// 	"share": require("image!share"),
-// 	"sliders": require("image!sliders"),
-// 	"stopwatch": require("image!stopwatch"),
-// 	"trashcan": require("image!trashcan"),
-// 	"twitter": require("image!twitter"),
-// 	"xls": require("image!xls"),
+	chat: require("image!chat"),
+	clock: require("image!clock"),
+	compose: require("image!compose"),
+	downarrow: require("image!downarrow"),
+	ellipses: require("image!ellipses"),
+	facebook: require("image!facebook"),
+	geo: require("image!geo"),
+	googleplus: require("image!googleplus"),
+	heart: require("image!heart"),
+	leftarrow: require("image!leftarrow"),
+	linkedin: require("image!linkedin"),
+	list: require("image!list"),
+	loader: require("image!loader"),
+	menu: require("image!menu"),
+	plus: require("image!plus"),
+	repeat: require("image!repeat"),
+	rightarrow: require("image!rightarrow"),
+	search: require("image!search"),
+	share: require("image!share"),
+	shuffle: require("image!shuffle"),
+	star: require("image!star"),
+	twitter: require("image!twitter"),
 
-// 	"logo": require("image!logo"),
-
-// //	Temporary variable for now until server is up and running
-// 	"backdrop": "http://localhost:8081/fpo/"+baseColor.backdrop+".jpg",
+	backdrop: "http://"+serverAddress+":8081/fpo/"+baseColor.backdrop+".png",
 };
 
 
@@ -283,17 +278,22 @@ let baseImage = {
 
 
 let sharedStyle = {
-	lgIcon: {
-		width: 40,
-		height: 40,
+	largeIcon: {
+		width: 60,
+		height: 60,
 		tintColor: baseColor.color,
 	},
-	smIcon: {
-		width: 20,
-		height: 20,
+	smallIcon: {
+		width: 30,
+		height: 30,
 		tintColor: baseColor.color,
 	},
-	lgAvatar: {
+	navIcon: {
+		width: 30,
+		height: 30,
+		tintColor: baseColor.pureWhite,
+	},
+	largeAvatar: {
 		width: 60,
 		height: 60,
 		borderWidth: 1 / PixelRatio.get(),
@@ -301,7 +301,7 @@ let sharedStyle = {
 		borderRadius: 3,
 		resizeMode: 'cover',
 	},
-   	smAvatar: {
+   	smallAvatar: {
 		width: 30,
 		height: 30,
 		borderWidth: 1 / PixelRatio.get(),
