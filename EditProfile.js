@@ -147,11 +147,9 @@ var styles = StyleSheet.create({
 	navTitle: {
 		...baseFont.medium,
 		fontWeight: "200",
-		color: baseColor.black,
 	},
 	navAction: {
 		...baseFont.small,
-		color: baseColor.black,
 	},
 
 	profile: {
@@ -188,20 +186,17 @@ var styles = StyleSheet.create({
     },
     handleLabel: {
     	...baseFont.label,
-    	color: baseColor.black,
     	backgroundColor: "transparent",
     },
     handleName: {
     	...baseFont.medium,
 		textAlign: "right",
-		color: baseColor.black,
         backgroundColor: "transparent",
     },
     handleDescription: {
 		...baseFont.small,
     	flex: 1,
 		marginTop: 5,
-    	color: baseColor.black,
     	opacity: 0.5,
     },
 

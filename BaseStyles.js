@@ -108,7 +108,7 @@ let night = {
 //	using white and black terminology in that context. If you ever need a full white or black, use the
 //	"pureWhite" and "pureBlack" keys.
 
-let baseColor = createColorPalette(night, "blue", "red");
+let baseColor = createColorPalette(day, "blue", "red");
 
 function createColorPalette(base, color, punch) {
 	return {
