@@ -251,6 +251,8 @@ var styles = StyleSheet.create({
         borderTopColor: tinyColor(baseColor.darkGray.toString("hsl")).setAlpha(0.50).toRgbString(),
     },
     wrapperButton: {
+    	flex: 1,
+    	alignItems: "center",
     	margin: 10,
     	borderWidth: 1,
     	borderRadius: 4,        
@@ -258,7 +260,7 @@ var styles = StyleSheet.create({
         backgroundColor: baseColor.brightWhite,
     },
     formButton: {
-    	flex: 1,
+
     	flexDirection: "row",
     	alignItems: "center",
     	paddingTop: 5,
@@ -268,9 +270,8 @@ var styles = StyleSheet.create({
 		borderRadius: 4,   // Seems like a hack or bug to have to add border radius to both wrapper and button for touch effect to look correct   
     },
     formButtonLabel: {
-    	...baseFont.medium,
+    	...baseFont.small,
 		letterSpacing: 1,
-		marginTop: -4,
         color: baseColor.color,
     },
 
