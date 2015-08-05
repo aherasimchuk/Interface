@@ -202,7 +202,7 @@ var styles = StyleSheet.create({
 	form: {
         flex: 1,
         height: 340,   // Need to find a better way to measure here
-        backgroundColor: baseColor.offWhite,
+        backgroundColor: baseColor.brightWhite,
     },
     item: {
     	flexDirection: "row",
@@ -239,7 +239,7 @@ var styles = StyleSheet.create({
 	   	...baseFont.label,
     	padding: 10,
 		color: baseColor.darkGray,
-       	backgroundColor: baseColor.offWhite,
+       	backgroundColor: baseColor.white,
     },
     buttons: {
     	flexDirection: "row",
