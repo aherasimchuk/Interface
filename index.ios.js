@@ -30,6 +30,7 @@ var {
 //
 
 var EditProfile = require('./EditProfile');
+var FormExample = require('./FormExample');
 
 // ----------------------------------------------------------------------------
 
