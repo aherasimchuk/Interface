@@ -129,7 +129,7 @@ var styles = StyleSheet.create({
 		right: 0,
 		bottom: 0,
 		backgroundColor: baseColor.white,
-		opacity: 0.50, 
+		opacity: 0.35, 
 	},
 
 	nav: {
