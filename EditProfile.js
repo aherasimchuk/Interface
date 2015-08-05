@@ -114,6 +114,7 @@ var EditProfile = React.createClass({
 var styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		backgroundColor: baseColor.white,
 	},
 	backdrop:{
 		resizeMode: "cover",
@@ -197,7 +198,7 @@ var styles = StyleSheet.create({
 	form: {
         flex: 1,
         height: 340,   // Need to find a better way to measure here
-        backgroundColor: baseColor.white,
+        backgroundColor: baseColor.offWhite,
     },
     item: {
     	flexDirection: "row",

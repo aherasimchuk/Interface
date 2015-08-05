@@ -39,7 +39,7 @@ var Interface = React.createClass({
 
 	render() {
 		return (
-			<View>
+			<View style={styles.container} >
 				<EditProfile />
 			</View>
 		);
