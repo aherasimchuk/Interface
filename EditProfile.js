@@ -41,10 +41,10 @@ var EditProfile = React.createClass({
 	render () {
 		return (
 			<View style={styles.container}>
-				<Image style={styles.backdrop} source={{ uri: "http://localhost:8081/fpo/cover-profile.png" }}>
+				<Image style={styles.backdrop} source={{ uri: baseImage.backdrop }}>
 					{/* NAVBAR */}
 					<View style={styles.nav}>
-						<Text style={styles.navAction}>BACK</Text>
+						<Image style={sharedStyle.navIcon} source={baseImage.leftarrow} />
 						<Text style={styles.navTitle}>Edit</Text>
 						<Text style={styles.navAction}>SAVE</Text>
 					</View>
@@ -68,35 +68,44 @@ var EditProfile = React.createClass({
 				</Image>
 
 				{/* FORM */}
-				<View style={styles.form}>
-					<View style={styles.item}>
-						<Text style={styles.itemLabel}>EMAIL</Text>
-					    <TextInput style={styles.itemField} clearButtonMode={"while-editing"} keyboardType={"email-address"} autoCorrect={false} 
-					    	placeholder={""} placeholderTextColor={baseColor.black} />
-				    </View>
+				<ScrollView automaticallyAdjustContentInsets="false">
+					<View style={styles.form}>
+						<View style={styles.item}>
+							<Text style={styles.itemLabel}>EMAIL</Text>
+						    <TextInput style={styles.itemField} clearButtonMode={"while-editing"} keyboardType={"email-address"} autoCorrect={false} 
+						    	placeholder={""} placeholderTextColor={baseColor.black} />
+					    </View>
 
-				    <View style={styles.item}>
-						<Text style={styles.itemLabel}>PASSWORD</Text>
-					    <TextInput style={styles.itemField} clearButtonMode={"while-editing"} keyboardType={"ascii-capable"} autoCorrect={false}
-					    	password={true} value={"testing"} />
-				    </View>
+					    <View style={styles.item}>
+							<Text style={styles.errorLabel}>PASSWORD</Text>
+						    <TextInput style={styles.itemField} clearButtonMode={"while-editing"} keyboardType={"ascii-capable"} autoCorrect={false}
+						    	password={true} value={"testing"} />
+					    </View>
 
-				    <View style={styles.item}>
-				        <Text style={styles.itemLabel}>AUTO POSTING</Text>
-				        <SwitchIOS style={styles.itemSwitcher} thumbTintColor={baseColor.color} tintColor={baseColor.bright} onTintColor={baseColor.bright}
-			                onValueChange={(value) => this.setState({autoPost: value})} value={this.state.autoPost} />
-				    </View>
+					    <View style={styles.item}>
+					        <Text style={styles.itemLabel}>AUTO POSTING</Text>
+					        <SwitchIOS style={styles.itemSwitcher} thumbTintColor={baseColor.color} tintColor={baseColor.bright} onTintColor={baseColor.bright}
+				                onValueChange={(value) => this.setState({autoPost: value})} value={this.state.autoPost} />
+					    </View>
 
-					<Text style={styles.formHeader}>SYNC WITH</Text>
-				    <View style={styles.buttons}>
-					    <TouchableHighlight style={styles.formButton} underlayColor={baseColor.bright}>
-					    	<Text style={styles.formButtonLabel}>FACEBOOK</Text>
-					    </TouchableHighlight>
-					    <TouchableHighlight style={[styles.formButton, {borderColor: baseColor.twitter}]} underlayColor={baseColor.bright}>
-					    	<Text style={[styles.formButtonLabel, {color: baseColor.twitter}]}>TWITTER</Text>
-					    </TouchableHighlight>
-				    </View>
-				</View>
+						{/* SYNC BUTTONS */}
+						<Text style={styles.formHeader}>SYNC WITH</Text>
+					    <View style={styles.buttons}>
+						    <TouchableHighlight style={styles.wrapperButton} underlayColor={baseColor.bright}>
+						    	<View style={styles.formButton}>
+							    	<Image style={sharedStyle.smallIcon} source={baseImage.facebook} />
+							    	<Text style={styles.formButtonLabel}>FACEBOOK</Text>
+						    	</View>
+						    </TouchableHighlight>
+						    <TouchableHighlight style={[styles.wrapperButton, {borderColor: baseColor.twitter}]} underlayColor={baseColor.bright}>
+						    	<View style={styles.formButton}>
+							    	<Image style={[sharedStyle.smallIcon, {tintColor: baseColor.twitter}]} source={baseImage.twitter} />
+							    	<Text style={[styles.formButtonLabel, {color: baseColor.twitter}]}>TWITTER</Text>
+						    	</View>
+						    </TouchableHighlight>
+					    </View>
+					</View>
+				</ScrollView>
 			</View>
 		)
 	}
@@ -119,10 +128,10 @@ var styles = StyleSheet.create({
 		paddingTop: 4,
 		paddingLeft: 10,
 		paddingRight: 10,
-		alignItems: "flex-end",
+		alignItems: "center",
 		justifyContent: "space-between",
  	    borderTopWidth: 1 / PixelRatio.get(),
-        borderTopColor: tinyColor(baseColor.darkGray.toString("hsl")).setAlpha(0.50).toRgbString(),
+        borderTopColor: tinyColor(baseColor.white.toString("hsl")).setAlpha(0.25).toRgbString(),
 	},
 	navTitle: {
 		...baseFont.medium,
@@ -185,10 +194,10 @@ var styles = StyleSheet.create({
     	opacity: 0.5,
     },
 
-
 	form: {
         flex: 1,
-        backgroundColor: baseColor.brightWhite,
+        height: 340,   // Need to find a better way to measure here
+        backgroundColor: baseColor.white,
     },
     item: {
     	flexDirection: "row",
@@ -203,6 +212,11 @@ var styles = StyleSheet.create({
     itemLabel: {
     	...baseFont.label,
     	color: baseColor.black,
+    	backgroundColor: "transparent",
+    },
+    errorLabel: {
+    	...baseFont.label,
+    	color: baseColor.punch,
     	backgroundColor: "transparent",
     },
     itemField: {
@@ -230,24 +244,33 @@ var styles = StyleSheet.create({
     	alignItems: "center",
     	justifyContent: "space-between",
     	paddingTop: 10,
+    	paddingBottom: 10,
     	paddingLeft: 10,
     	paddingRight: 20,
         borderTopWidth: 1 / PixelRatio.get(),
         borderTopColor: tinyColor(baseColor.darkGray.toString("hsl")).setAlpha(0.50).toRgbString(),
     },
-    formButton: {
-    	flex: 1,
+    wrapperButton: {
     	margin: 10,
-        padding: 5,
-        borderWidth: 1,
-        borderRadius: 4,
+    	borderWidth: 1,
+    	borderRadius: 4,        
         borderColor: baseColor.color,
         backgroundColor: baseColor.brightWhite,
     },
+    formButton: {
+    	flex: 1,
+    	flexDirection: "row",
+    	alignItems: "center",
+    	paddingTop: 5,
+    	paddingBottom: 5,
+        paddingLeft: 10,
+        paddingRight: 10,
+		borderRadius: 4,   // Seems like a hack or bug to have to add border radius to both wrapper and button for touch effect to look correct   
+    },
     formButtonLabel: {
-    	...baseFont.small,
+    	...baseFont.medium,
 		letterSpacing: 1,
-        textAlign: "center",
+		marginTop: -4,
         color: baseColor.color,
     },
 
