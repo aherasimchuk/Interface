@@ -141,7 +141,7 @@ var styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "space-between",
  	    borderTopWidth: 1 / PixelRatio.get(),
-        borderTopColor: tinyColor(baseColor.black.toString("hsl")).setAlpha(0.25).toRgbString(),
+        borderTopColor: tinyColor(baseColor.black.toString("hsl")).setAlpha(0.15).toRgbString(),
 	},
 	navTitle: {
 		...baseFont.medium,
@@ -175,13 +175,13 @@ var styles = StyleSheet.create({
     	marginBottom: 20,
     	paddingBottom: 5,
         borderBottomWidth: 1 / PixelRatio.get(),
-        borderBottomColor: tinyColor(baseColor.darkGray.toString("hsl")).setAlpha(0.50).toRgbString(),
+        borderBottomColor: tinyColor(baseColor.black.toString("hsl")).setAlpha(0.15).toRgbString(),
     },
     handleStacked: {
     	flex: 1,
     	paddingBottom: 5,
         borderBottomWidth: 1 / PixelRatio.get(),
-        borderBottomColor: tinyColor(baseColor.darkGray.toString("hsl")).setAlpha(0.50).toRgbString(),
+        borderBottomColor: tinyColor(baseColor.black.toString("hsl")).setAlpha(0.15).toRgbString(),
     },
     handleLabel: {
     	...baseFont.label,
@@ -196,7 +196,7 @@ var styles = StyleSheet.create({
 		...baseFont.small,
     	flex: 1,
 		marginTop: 5,
-    	opacity: 0.5,
+    	opacity: 0.65,
     },
 
 	form: {
