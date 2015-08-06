@@ -43,7 +43,7 @@ var EditProfile = React.createClass({
 			<View style={styles.container}>
 				<Image style={styles.backdrop} source={{ uri: baseImage.backdrop }}>
 					{/* NAVBAR */}
-					<View style={styles.overlay} />
+					<View style={sharedStyle.overlay} />
 					<View style={styles.nav}>
 						<Image style={sharedStyle.navIcon} source={baseImage.leftarrow} />
 						<Text style={styles.navTitle}>Edit</Text>
@@ -121,15 +121,6 @@ var styles = StyleSheet.create({
 		resizeMode: "cover",
 		height: 230,
 		backgroundColor: "transparent",
-	},
-	overlay: {
-		position: "absolute",
-		top: 0,
-		left: 0,
-		right: 0,
-		bottom: 0,
-		backgroundColor: baseColor.white,
-		opacity: 0.35, 
 	},
 
 	nav: {
