@@ -86,8 +86,8 @@ var FormExample = React.createClass ({
                                     style={styles.switcher}
                                     onValueChange={(value) => this.setState({markAsComplete: value})}
                                     value={this.state.markAsComplete}
-                                    thumbTintColor={baseColor.pureWhite}
-                                    tintColor={baseColor.pureWhite}
+                                    thumbTintColor={baseColor.black}
+                                    tintColor={baseColor.black}
                                     onTintColor={baseColor.color}
                                 />
                             </View>
@@ -101,8 +101,8 @@ var FormExample = React.createClass ({
                                     style={styles.switcher}
                                     onValueChange={(value) => this.setState({followupNeeded: value})}
                                     value={this.state.followupNeeded}
-                                    thumbTintColor={baseColor.pureWhite}
-                                    tintColor={baseColor.pureWhite}
+                                    thumbTintColor={baseColor.black}
+                                    tintColor={baseColor.black}
                                     onTintColor={baseColor.color}
                                 />
                             </View>
