@@ -165,7 +165,7 @@ function createColorPalette(base, color, punch) {
 //	... to properly override the color in the component.
 
 
-let baseFontFace = "RobotoCondensed-Regular"
+let baseFontFace = "RobotoCondensed-Regular";
 
 let baseFont = {
 	xtraLarge: {
