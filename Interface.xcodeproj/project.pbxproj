@@ -54,6 +54,12 @@
 		7556708E1B73CC9C000F26C4 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7556706F1B73CC9C000F26C4 /* RobotoCondensed-LightItalic.ttf */; };
 		7556708F1B73CC9C000F26C4 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 755670701B73CC9C000F26C4 /* RobotoCondensed-Regular.ttf */; };
 		755670901B73CC9C000F26C4 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 755670701B73CC9C000F26C4 /* RobotoCondensed-Regular.ttf */; };
+		75DAAB2E1B74258100D79E12 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75DAAB2C1B74258100D79E12 /* Montserrat-Bold.ttf */; };
+		75DAAB2F1B74258100D79E12 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75DAAB2C1B74258100D79E12 /* Montserrat-Bold.ttf */; };
+		75DAAB301B74258100D79E12 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75DAAB2D1B74258100D79E12 /* Montserrat-Regular.ttf */; };
+		75DAAB311B74258100D79E12 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75DAAB2D1B74258100D79E12 /* Montserrat-Regular.ttf */; };
+		75DAAB3C1B7426CD00D79E12 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB61A68108700A75B9A /* Info.plist */; };
+		75DAAB3D1B7426CE00D79E12 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB61A68108700A75B9A /* Info.plist */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -173,6 +179,8 @@
 		7556706E1B73CC9C000F26C4 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
 		7556706F1B73CC9C000F26C4 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		755670701B73CC9C000F26C4 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		75DAAB2C1B74258100D79E12 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		75DAAB2D1B74258100D79E12 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,6 +311,8 @@
 		755670601B73CC9C000F26C4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				75DAAB2C1B74258100D79E12 /* Montserrat-Bold.ttf */,
+				75DAAB2D1B74258100D79E12 /* Montserrat-Regular.ttf */,
 				755670611B73CC9C000F26C4 /* OpenSans-Bold.ttf */,
 				755670621B73CC9C000F26C4 /* OpenSans-BoldItalic.ttf */,
 				755670631B73CC9C000F26C4 /* OpenSans-ExtraBold.ttf */,
@@ -571,6 +581,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DAAB311B74258100D79E12 /* Montserrat-Regular.ttf in Resources */,
 				7556707C1B73CC9C000F26C4 /* OpenSans-Light.ttf in Resources */,
 				755670741B73CC9C000F26C4 /* OpenSans-BoldItalic.ttf in Resources */,
 				755670881B73CC9C000F26C4 /* RobotoCondensed-BoldItalic.ttf in Resources */,
@@ -579,8 +590,10 @@
 				7556707E1B73CC9C000F26C4 /* OpenSans-LightItalic.ttf in Resources */,
 				755670821B73CC9C000F26C4 /* OpenSans-Semibold.ttf in Resources */,
 				755670721B73CC9C000F26C4 /* OpenSans-Bold.ttf in Resources */,
+				75DAAB3D1B7426CE00D79E12 /* Info.plist in Resources */,
 				755670761B73CC9C000F26C4 /* OpenSans-ExtraBold.ttf in Resources */,
 				755670841B73CC9C000F26C4 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				75DAAB2F1B74258100D79E12 /* Montserrat-Bold.ttf in Resources */,
 				7556707A1B73CC9C000F26C4 /* OpenSans-Italic.ttf in Resources */,
 				755670801B73CC9C000F26C4 /* OpenSans-Regular.ttf in Resources */,
 				7556708E1B73CC9C000F26C4 /* RobotoCondensed-LightItalic.ttf in Resources */,
@@ -594,6 +607,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DAAB2E1B74258100D79E12 /* Montserrat-Bold.ttf in Resources */,
 				7556708D1B73CC9C000F26C4 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				7556708B1B73CC9C000F26C4 /* RobotoCondensed-Light.ttf in Resources */,
 				755670811B73CC9C000F26C4 /* OpenSans-Semibold.ttf in Resources */,
@@ -601,7 +615,9 @@
 				755670831B73CC9C000F26C4 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				7556707F1B73CC9C000F26C4 /* OpenSans-Regular.ttf in Resources */,
+				75DAAB3C1B7426CD00D79E12 /* Info.plist in Resources */,
 				755670851B73CC9C000F26C4 /* RobotoCondensed-Bold.ttf in Resources */,
+				75DAAB301B74258100D79E12 /* Montserrat-Regular.ttf in Resources */,
 				755670871B73CC9C000F26C4 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				7556708F1B73CC9C000F26C4 /* RobotoCondensed-Regular.ttf in Resources */,
 				755670791B73CC9C000F26C4 /* OpenSans-Italic.ttf in Resources */,
