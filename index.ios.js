@@ -40,7 +40,7 @@ var Interface = React.createClass({
 	render() {
 		return (
 			<View style={styles.container} >
-				<EditProfile />
+				<FormExample />
 			</View>
 		);
 	},

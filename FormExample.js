@@ -42,9 +42,10 @@ var FormExample = React.createClass ({
 
     render() {
         return (
-            <ScrollView keyboardDismissMode={true} keyboardShouldPersistTaps={false} automaticallyAdjustContentInsets="false">
+            <ScrollView style={styles.container} keyboardDismissMode={true} keyboardShouldPersistTaps={false} automaticallyAdjustContentInsets="false">
 
                 <Image style={styles.backdrop} source={{ uri: baseImage.backdrop}}>
+                    <View style={styles.overlay} />
                     <View style={styles.form}>
 
                         <TextInput 
@@ -135,18 +136,32 @@ var FormExample = React.createClass ({
 // Styling --------------------------------------------------------------------
 
 var styles = StyleSheet.create({
-    form: {
+    container: {
         flex: 1,
-        marginTop: 20,
-        backgroundColor: "transparent",
+        backgroundColor: baseColor.white,
     },
 
     backdrop: {
         flex: 1,
         resizeMode: "cover",
+        height: 580, // HACK: Only for purposes of prototyping form in this project. Do not proprogate.
+    },
+    overlay: {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: baseColor.white,
+        opacity: 0.35, 
+    },
+
+    form: {
+        flex: 1,
+        marginTop: 20,
         paddingLeft: 12,
         paddingRight: 12,
-        height: 580, // HACK: Only for purposes of prototyping form in this project. Do not proprogate.
+        backgroundColor: "transparent",
     },
 
     editfield: {
