@@ -101,6 +101,31 @@ let night = {
 };
 
 
+let martian = {
+
+	base: husl.toHex(0, 0, 15),
+	baseTint: husl.toHex(0, 0, 0),
+	baseShade: husl.toHex(0, 0, 25),
+	
+	baseComplement: husl.toHex(0, 0, 96),
+	baseComplementTint: husl.toHex(0, 0, 92),
+	baseComplementShade: husl.toHex(0, 0, 98),
+	
+	baseGray: husl.toHex(0, 0, 45),
+	baseLightGray: husl.toHex(0, 0, 40),
+	baseDarkGray: husl.toHex(0, 0, 55),
+	
+	blue: husl.toHex(247, 100, 60),
+	red: husl.toHex(8, 100, 45),
+	green: husl.toHex(130, 100, 55),
+
+	facebook: husl.toHex(260, 95, 50),
+	twitter: husl.toHex(235, 95, 70),
+
+	backdrop: "bgd-ocean-blurred",
+};
+
+
 //	Create the color palette using theme values from above, and pass along a primary and punch color 
 //	pulled from the theme.
 
@@ -108,7 +133,7 @@ let night = {
 //	using white and black terminology in that context. If you ever need a full white or black, use the
 //	"pureWhite" and "pureBlack" keys.
 
-let baseColor = createColorPalette(day, "blue", "red");
+let baseColor = createColorPalette(martian, "blue", "red");
 
 function createColorPalette(base, color, punch) {
 	return {
@@ -140,6 +165,7 @@ function createColorPalette(base, color, punch) {
 		facebook: base.facebook,
 		twitter: base.twitter,
 
+		overlay:tinyColor(base[color].toString("hsl")).setAlpha(0.1).toRgbString(),
 	};
 };
 
@@ -171,15 +197,15 @@ let baseFont = {
 	xtraLarge: {
 		fontFamily: baseFontFace,
 		fontWeight: "100",
-		fontSize: 28,
-		lineHeight: 36,
+		fontSize: 32,
+		lineHeight: 38,
 		color: baseColor.black,
 	},
 	large: {
 		fontFamily: baseFontFace,
 		fontWeight: "100",
 		fontSize: 24,
-		lineHeight: 28,
+		lineHeight: 26,
 		color: baseColor.black,
 	},	
 	medium: {	
@@ -191,15 +217,15 @@ let baseFont = {
 	},
 	small: {
 		fontFamily: baseFontFace,
-		fontWeight: "100",
-		fontSize: 12,
-		lineHeight: 14,
+		fontWeight: "200",
+		fontSize: 14,
+		lineHeight: 18,
 		color: baseColor.black,
 	},
 	label: {
 		fontFamily: baseFontFace,
 		fontWeight: "400",
-		fontSize: 12,
+		fontSize: 14,
 		color: baseColor.black,
 	},
 };
@@ -228,7 +254,7 @@ let baseFont = {
 let serverAddress = "localhost";
 
 //	Add your network address here for iPhone development
-// let serverAddress = "ENTER YOUR NETWORK IP ADDRRESS HERE";
+// let serverAddress = "10.1.10.12";
 
 let baseImage = {
 	chat: require("image!chat"),
@@ -285,7 +311,25 @@ let sharedStyle = {
 		right: 0,
 		bottom: 0,
 		backgroundColor: baseColor.white,
-		opacity: 0.35, 
+		opacity: 0.50, 
+	},
+	softOverlay: {
+		position: "absolute",
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 0,
+		backgroundColor: baseColor.white,
+		opacity: 0.20, 
+	},
+	strongOverlay: {
+		position: "absolute",
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 0,
+		backgroundColor: baseColor.white,
+		opacity: 0.70, 
 	},
 
 	largeIcon: {
@@ -338,4 +382,4 @@ let sharedStyle = {
 
 //	------------------------------------------------------------
 
-module.exports = {baseColor, baseFont, baseImage, sharedStyle};
+module.exports = {baseColor, baseFont, baseImage, sharedStyle, serverAddress};

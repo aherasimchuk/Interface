@@ -31,6 +31,7 @@ var {
 
 var EditProfile = require('./EditProfile');
 var FormExample = require('./FormExample');
+var TranslucentMartian = require('./TranslucentMartian');
 
 // ----------------------------------------------------------------------------
 
@@ -40,7 +41,7 @@ var Interface = React.createClass({
 	render() {
 		return (
 			<View style={styles.container} >
-				<FormExample />
+				<TranslucentMartian />
 			</View>
 		);
 	},
