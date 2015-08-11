@@ -42,91 +42,96 @@ var FormExample = React.createClass ({
 
     render() {
         return (
-            <ScrollView style={styles.container} keyboardDismissMode={true} keyboardShouldPersistTaps={false} automaticallyAdjustContentInsets="false">
-
+            <View style={styles.container}>
                 <Image style={styles.backdrop} source={{ uri: baseImage.backdrop}}>
                     <View style={sharedStyle.overlay} />
-                    <View style={styles.form}>
+                    <ScrollView 
+                        keyboardDismissMode={true} 
+                        keyboardShouldPersistTaps={false} 
+                        automaticallyAdjustContentInsets="false">
+                
+                        <View style={styles.form}>
 
-                        <TextInput 
-                            style={styles.editfield} 
-                            placeholder={"Company"} 
-                            placeholderTextColor={tinyColor(baseColor.black.toString("hsl")).setAlpha(0.35).toRgbString()}
-                            keyboardType={"default"}
-                            autoCorrect={false}
-                            clearButtonMode={"while-editing"}
-                        />
-                        <View style={styles.underline} />
+                            <TextInput 
+                                style={styles.editfield} 
+                                placeholder={"Company"} 
+                                placeholderTextColor={tinyColor(baseColor.black.toString("hsl")).setAlpha(0.35).toRgbString()}
+                                keyboardType={"default"}
+                                autoCorrect={false}
+                                clearButtonMode={"while-editing"}
+                            />
+                            <View style={styles.underline} />
 
-                        <TextInput 
-                            style={styles.editfield} 
-                            placeholder={"Email"} 
-                            placeholderTextColor={tinyColor(baseColor.black.toString("hsl")).setAlpha(0.35).toRgbString()}
-                            keyboardType={"email-address"}
-                            autoCorrect={false}
-                            clearButtonMode={"while-editing"}
-                        />
-                        <View style={styles.underline} />
+                            <TextInput 
+                                style={styles.editfield} 
+                                placeholder={"Email"} 
+                                placeholderTextColor={tinyColor(baseColor.black.toString("hsl")).setAlpha(0.35).toRgbString()}
+                                keyboardType={"email-address"}
+                                autoCorrect={false}
+                                clearButtonMode={"while-editing"}
+                            />
+                            <View style={styles.underline} />
 
-                        <TextInput 
-                            style={styles.editfield} 
-                            password={true}
-                            placeholder={"Password"} 
-                            placeholderTextColor={tinyColor(baseColor.black.toString("hsl")).setAlpha(0.35).toRgbString()}
-                            keyboardType={"ascii-capable"}
-                            autoCorrect={false}
-                            clearButtonMode={"while-editing"}
-                        />
-                        <View style={styles.underline} />
+                            <TextInput 
+                                style={styles.editfield} 
+                                password={true}
+                                placeholder={"Password"} 
+                                placeholderTextColor={tinyColor(baseColor.black.toString("hsl")).setAlpha(0.35).toRgbString()}
+                                keyboardType={"ascii-capable"}
+                                autoCorrect={false}
+                                clearButtonMode={"while-editing"}
+                            />
+                            <View style={styles.underline} />
 
-                        <View style={styles.switch}>
-                            <Text style={styles.switcherLabel}>Mark as complete</Text>
-                            <View style={styles.switcher}>
-                                <SwitchIOS
-                                    style={styles.switcher}
-                                    onValueChange={(value) => this.setState({markAsComplete: value})}
-                                    value={this.state.markAsComplete}
-                                    thumbTintColor={baseColor.black}
-                                    tintColor={baseColor.black}
-                                    onTintColor={baseColor.color}
-                                />
+                            <View style={styles.switch}>
+                                <Text style={styles.switcherLabel}>Mark as complete</Text>
+                                <View style={styles.switcher}>
+                                    <SwitchIOS
+                                        style={styles.switcher}
+                                        onValueChange={(value) => this.setState({markAsComplete: value})}
+                                        value={this.state.markAsComplete}
+                                        thumbTintColor={baseColor.black}
+                                        tintColor={baseColor.black}
+                                        onTintColor={baseColor.color}
+                                    />
+                                </View>
                             </View>
-                        </View>
-                        <View style={styles.underline} />
+                            <View style={styles.underline} />
 
-                        <View style={styles.switch}>
-                            <Text style={styles.switcherLabel}>Follow up needed</Text>
-                            <View style={styles.switcher}>
-                                <SwitchIOS
-                                    style={styles.switcher}
-                                    onValueChange={(value) => this.setState({followupNeeded: value})}
-                                    value={this.state.followupNeeded}
-                                    thumbTintColor={baseColor.black}
-                                    tintColor={baseColor.black}
-                                    onTintColor={baseColor.color}
-                                />
+                            <View style={styles.switch}>
+                                <Text style={styles.switcherLabel}>Follow up needed</Text>
+                                <View style={styles.switcher}>
+                                    <SwitchIOS
+                                        style={styles.switcher}
+                                        onValueChange={(value) => this.setState({followupNeeded: value})}
+                                        value={this.state.followupNeeded}
+                                        thumbTintColor={baseColor.black}
+                                        tintColor={baseColor.black}
+                                        onTintColor={baseColor.color}
+                                    />
+                                </View>
                             </View>
+                            <View style={styles.underline} />
+
+                            <TouchableHighlight style={styles.button} underlayColor={baseColor.color}>
+                                <Text style={styles.buttonLabel}>AUTHORIZE</Text>
+                            </TouchableHighlight>
+
+                            <Text style={styles.description}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </Text>
+                            <Text style={styles.description}>
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                esse cillum dolore eu fugiat nulla pariatur.
+                            </Text>
+
                         </View>
-                        <View style={styles.underline} />
-
-                        <TouchableHighlight style={styles.button} underlayColor={baseColor.color}>
-                            <Text style={styles.buttonLabel}>AUTHORIZE</Text>
-                        </TouchableHighlight>
-
-                        <Text style={styles.description}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                        </Text>
-                        <Text style={styles.description}>
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse cillum dolore eu fugiat nulla pariatur.
-                        </Text>
-
-                    </View>
-                </Image>
-
-            </ScrollView>
+                        
+                    </ScrollView>
+                </Image>            
+            </View>
 		);
 	},
 
@@ -144,7 +149,7 @@ var styles = StyleSheet.create({
     backdrop: {
         flex: 1,
         resizeMode: "cover",
-        height: 580, // HACK: Only for purposes of prototyping form in this project. Do not proprogate.
+        backgroundColor: "transparent",
     },
 
     form: {

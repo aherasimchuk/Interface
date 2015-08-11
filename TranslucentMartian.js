@@ -172,8 +172,8 @@ var styles = StyleSheet.create({
 		backgroundColor: baseColor.white,
 	},
 	backdrop:{
+		flex: 1,
 		resizeMode: "cover",
-		height: 670, // FIX: Need to find a better way to measure here
 		backgroundColor: "transparent",
 	},
 	logo: {
