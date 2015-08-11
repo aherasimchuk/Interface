@@ -42,8 +42,9 @@ var EditProfile = React.createClass({
 		return (
 			<View style={styles.container}>
 				<Image style={styles.backdrop} source={{ uri: baseImage.backdrop }}>
-					{/* NAVBAR */}
 					<View style={sharedStyle.overlay} />
+					
+					{/* NAVBAR */}
 					<View style={styles.nav}>
 						<Image style={sharedStyle.navIcon} source={baseImage.leftarrow} />
 						<Text style={styles.navTitle}>Edit</Text>
@@ -118,9 +119,10 @@ var styles = StyleSheet.create({
 		backgroundColor: baseColor.white,
 	},
 	backdrop:{
+		flex: 1,
 		resizeMode: "cover",
-		height: 230,
 		backgroundColor: "transparent",
+		height: 230,
 	},
 
 	nav: {
@@ -192,8 +194,7 @@ var styles = StyleSheet.create({
 
 	form: {
         flex: 1,
-        height: 340,   // Need to find a better way to measure here
-        backgroundColor: baseColor.brightWhite,
+        backgroundColor: "transparent",
     },
     item: {
     	flexDirection: "row",
