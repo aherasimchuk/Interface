@@ -45,6 +45,7 @@ var FormExample = React.createClass ({
             <View style={styles.container}>
                 <Image style={styles.backdrop} source={{ uri: baseImage.backdrop}}>
                     <View style={sharedStyle.overlay} />
+                    
                     <ScrollView 
                         keyboardDismissMode={true} 
                         keyboardShouldPersistTaps={false} 
@@ -128,7 +129,7 @@ var FormExample = React.createClass ({
                             </Text>
 
                         </View>
-                        
+
                     </ScrollView>
                 </Image>            
             </View>
